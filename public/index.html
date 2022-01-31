@@ -1,0 +1,186 @@
+<html lang="en" dir="ltr" class="dark scroll-smooth">
+  <!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmadreza Mozaffary | Front-End developer</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- HTML2PDF.js -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- AlertifyJS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.css"
+      integrity="sha512-MpdEaY2YQ3EokN6lCD6bnWMl5Gwk7RjBbpKLovlrH6X+DRokrPRAF3zQJl1hZUiLXfo2e9MrOt+udOnHCAmi5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/alertify.js"
+      integrity="sha512-eOUPKZXJTfgptSYQqVilRmxUNYm0XVHwcRHD4mdtCLWf/fC9XWe98IT8H1xzBkLL4Mo9GL0xWMSJtgS5te9rQA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Main JS -->
+    <script defer src="./js/app.js"></script>
+  </head>
+  <body
+    class="w-12/12 h-12/12 relative bg-gray-300 text-gray-600 dark:bg-gray-800 dark:text-gray-400 font-bold font-body"
+  >
+    <!-- Top-left menu -->
+    <nav
+      class="w-max ml-2 flex flex-col sm:ml-4 mt-5 text-lg top-0 left-0 sticky"
+    >
+      <!-- Mode Toggler -->
+      <button class="btn w-max mx-auto mode-toggler">
+        <i class="far fa-moon font-bold text-fuchsia-400 hidden"></i>
+        <i class="fas fa-sun text-yellow-600"></i>
+      </button>
+
+      <!-- Download PDF -->
+      <button class="btn hidden sm:block mt-1 uppercase resume">
+        Resume &darr;
+      </button>
+    </nav>
+
+    <!-- All contents | Website Container -->
+    <section
+      id="print"
+      class="w-4/5 h-11/12 text-center sm:py-5 sm:px-10 mx-auto my-16 sm:border border-px border-gray-800 dark:border-white rounded sm:shadow-xl shadow-slate-500 sm:transition-all ease-in duration-1000"
+    >
+      <!-- About card -->
+      <div
+        class="w-11/12 h-96 my-20 relative py-5 mx-auto border border-gray-500 border-1 rounded shadow-md shadow-slate-500"
+      >
+        <!-- Photo -->
+        <img
+          class="w-20 mx-auto sm:w-44 sm:block sm:absolute sm:-top-20 sm:left-[41%] rounded-full dark:ring-4"
+          src="./images/me.jpeg"
+          alt="profile"
+        />
+
+        <!-- About txt -->
+        <div class="text-xl sm:text-2xl sm:mt-24 mt-4 mx-auto">
+          <p>Hi 👋, I'm Ahmadreza Mozaffary</p>
+          <p class="text-xs sm:text-lg text-center mt-2 mx-auto px-3 py-2">
+            🔭 I’m currently working on Personal project <br />
+            🌱 I’m currently learning JavaScript <br />
+            🥅 2022 Goal: I wanna become a "junior" front-end developer <br />
+            💬 Ask me about HTML, CSS, JavaScript <br />
+            📫 How to reach me
+            <a class="hover:opacity-75" href="mailto:am2002.de@gmail.com"
+              >am2002.de@gmail.com</a
+            >
+            <br />
+            📄 Know about my experiences
+            <a
+              class="hover:opacity-75"
+              href="https://www.linkedin.com/in/ahmadreza-mozaffary/"
+              target="_blank"
+            >
+              LINKEDIN</a
+            >
+            <br />
+            ⚡ Fun fact I love to listen musics and watch coding live streams
+          </p>
+        </div>
+      </div>
+
+      <!-- Latest Articles -->
+      <div
+        class="w-11/12 h-[27rem] sm:h-[31rem] flex flex-col items-center sm:grid sm:grid-cols-2 sm:gap-3 my-10 sm:my-20 relative px-2 mx-auto border border-gray-500 border-1 rounded shadow-md shadow-slate-500 overflow-y-scroll"
+      >
+        <!-- Title -->
+        <h4
+          class="w-full h-max top-0 left-0 sticky sm:absolute bg-gray-300 dark:bg-gray-800 uppercase text-purple-700 dark:text-orange-300 trackin-lighter mb-5 z-40"
+        >
+          Latest Articles ( Persian )
+        </h4>
+
+        <!-- Articles -->
+        <div
+          class="w-11/12 h-11/12 flex flex-col-reverse justify-center items-center mx-auto overflow-visible my-2 p-5"
+        >
+          <!-- Top ( Article image ) -->
+          <div class="w-5/5 ml-2 relative order-2 overflow-hidden">
+            <img
+              class="w-full h-full object-center z-10"
+              src="./images/hoisting.png"
+              alt="HOISTING"
+            />
+            <div class="w-full h-full absolute bg-gray-500 z-50">s</div>
+          </div>
+
+          <!-- btn  -->
+          <a
+            class="btn absolute !text-white bg-red-500 !mt-5"
+            href="https://vrgl.ir/4AkEi"
+            >Read</a
+          >
+        </div>
+        <!-- Articles -->
+        <div
+          class="w-11/12 h-11/12 flex flex-col-reverse justify-center items-center mx-auto overflow-visibl my-2 p-5"
+        >
+          <!-- Top ( Article image ) -->
+          <div class="w-5/5 ml-2 relative order-2 overflow-hidden z-10">
+            <img
+              class="w-full h-full object-center z-10"
+              src="./images/tdz.png"
+              alt="TDZ"
+            />
+            <div class="w-full h-full absolute bg-gray-500 z-50">s</div>
+          </div>
+
+          <!-- btn  -->
+          <a
+            class="btn absolute !text-white bg-red-500 z-10 !mt-5"
+            href="https://vrgl.ir/6kxR9"
+            >Read</a
+          >
+        </div>
+      </div>
+
+      <!-- Github repo container -->
+      <div
+        id="repos-container"
+        class="w-11/12 h-64 flex flex-col items-center sm:h-max sm:grid sm:grid-cols-2 sm:gap-3 my-10 sm:my-20 relative px-2 mx-auto border border-gray-500 border-1 rounded shadow-md shadow-slate-500 overflow-y-scroll"
+      >
+        <!-- Title -->
+        <h4
+          class="w-full h-max top-0 left-0 sticky sm:absolute bg-gray-300 dark:bg-gray-800 uppercase text-purple-700 dark:text-orange-300 trackin-lighter mb-5"
+        >
+          Github Repos
+        </h4>
+      </div>
+
+      <!-- Arrow Up -->
+      <button
+        id="arrow-up"
+        class="hidden sm:block absolute mr-5 mb-5 text-2xl p-3 font-extrabold -bottom-20 right-0 rounded-full animate-bounce hover:animate-pulse"
+      >
+        &uarr;
+      </button>
+    </section>
+  </body>
+</html>
