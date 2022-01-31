@@ -5,12 +5,13 @@ const root = document.documentElement;
 const togglerBtn = document.querySelector(".mode-toggler");
 const githubImgs = document.querySelectorAll(".img");
 const reposContainer = document.querySelector("#repos-container");
+const reposContainerTitle = document.querySelector(".repos-title");
 const arrowUp = document.querySelector("#arrow-up");
 
 // Iitial variables
 const myGithubUsername = "AhmadrezaMozaffary";
 const allReposAPI = `https://api.github.com/users/${myGithubUsername}/repos`;
-console.log(root.classList.contains("dark"));
+
 // Recive data from API
 fetch(allReposAPI)
   .then((response) => {
@@ -19,6 +20,7 @@ fetch(allReposAPI)
     return response.json();
   })
   .then((dataArr) => {
+    reposContainerTitle.textContent = `Github Repos (${dataArr.length})`
     dataArr.forEach((data, i) => {
       const repoName = data.name.split("-").join(" "); // Remove dashes
       const repoDesc = data.description;
