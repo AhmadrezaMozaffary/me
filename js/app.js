@@ -7,6 +7,7 @@ const githubImgs = document.querySelectorAll(".img");
 const reposContainer = document.querySelector("#repos-container");
 const reposContainerTitle = document.querySelector(".repos-title");
 const arrowUp = document.querySelector("#arrow-up");
+const loadingSVG = document.querySelector(".loading-svg");
 
 // Iitial variables
 const myGithubUsername = "AhmadrezaMozaffary";
@@ -20,7 +21,7 @@ fetch(allReposAPI)
     return response.json();
   })
   .then((dataArr) => {
-    reposContainerTitle.textContent = `Github Repos (${dataArr.length})`
+    reposContainerTitle.textContent = `Github Repos (${dataArr.length})`;
     dataArr.forEach((data, i) => {
       const repoName = data.name.split("-").join(" "); // Remove dashes
       const repoDesc = data.description;
@@ -61,7 +62,11 @@ fetch(allReposAPI)
       reposContainer.insertAdjacentHTML("beforeend", repoComponent);
     });
   })
-  .catch((err) => alertify.error(err));
+  .catch((err) => alertify.error(err))
+  .finally(() => {
+    loadingSVG.classList.add("hidden");
+    loadingSVG.style.display = "";
+  });
 
 // Toggling modes
 togglerBtn.addEventListener("click", () => {
