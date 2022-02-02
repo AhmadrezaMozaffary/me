@@ -14,13 +14,14 @@ const myGithubUsername = "AhmadrezaMozaffary";
 const allReposAPI = `https://api.github.com/users/${myGithubUsername}/repos`;
 
 // Recive data from API
-fetch(allReposAPI)
-  .then((response) => {
-    if (!response.ok)
+const reciveData = async function () {
+  try {
+    const responseAPI = await fetch(allReposAPI);
+    if (!responseAPI.ok)
       throw new Error(`Check your connection ${response.status}`);
-    return response.json();
-  })
-  .then((dataArr) => {
+
+    const dataArr = await responseAPI.json();
+
     reposContainerTitle.textContent = `Github Repos (${dataArr.length})`;
     dataArr.forEach((data, i) => {
       const repoName = data.name.split("-").join(" "); // Remove dashes
@@ -61,12 +62,14 @@ fetch(allReposAPI)
 
       reposContainer.insertAdjacentHTML("beforeend", repoComponent);
     });
-  })
-  .catch((err) => alertify.error(err))
-  .finally(() => {
+
     loadingSVG.classList.add("hidden");
     loadingSVG.style.display = "";
-  });
+  } catch (error) {
+    alertify.error(error);
+  }
+};
+reciveData();
 
 // Toggling modes
 togglerBtn.addEventListener("click", () => {
