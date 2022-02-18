@@ -9,11 +9,11 @@ const reposContainerTitle = document.querySelector(".repos-title");
 const arrowUp = document.querySelector("#arrow-up");
 const loadingSVG = document.querySelector(".loading-svg");
 
-// Iitial variables
+// Initial variables
 const myGithubUsername = "AhmadrezaMozaffary";
 const allReposAPI = `https://api.github.com/users/${myGithubUsername}/repos`;
 
-// Recive data from API
+// Recive and display data from API
 const reciveData = async function () {
   try {
     const responseAPI = await fetch(allReposAPI);
@@ -25,7 +25,12 @@ const reciveData = async function () {
     reposContainerTitle.textContent = `Github Repos (${dataArr.length})`;
     dataArr.forEach((data, i) => {
       const repoName = data.name.split("-").join(" "); // Remove dashes
-      const repoDesc = data.description;
+      let repoDesc = data.description;
+
+      // Only display repositories with special '🏅' charachter
+      if (!repoDesc?.includes("🏅")) return;
+      else repoDesc = repoDesc.replace("🏅", "");
+
       const repoComponent = `
       <!-- Repository (${i + 1}) -->
       <div
@@ -66,7 +71,7 @@ const reciveData = async function () {
     loadingSVG.classList.add("hidden");
     loadingSVG.style.display = "";
   } catch (error) {
-    alertify.error(error);
+    alertify.error(error.message);
   }
 };
 reciveData();
