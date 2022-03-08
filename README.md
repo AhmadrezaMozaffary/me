@@ -10,12 +10,6 @@
 
 ### ✨ [Demo](http://b2n.ir/aboutme)
 
-## Install
-
-```sh
-npm install
-```
-
 ## Author
 
 👤 **Ahmadreza (AHmad) Mozaffary**
