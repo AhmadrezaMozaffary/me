@@ -21,7 +21,6 @@ const allReposAPI = `https://api.github.com/users/${myGithubUsername}/repos`;
 const setMyAvetar = async function () {
   try {
     const responseAPI = await fetch(avetarAPI);
-    console.log(responseAPI);
     if (!responseAPI.ok)
       throw new Error(`Avetar is NOT loaded (${response.status})`);
 
