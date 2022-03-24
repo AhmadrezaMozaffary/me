@@ -1,6 +1,6 @@
 "use strict";
 
-const { data } = require("autoprefixer");
+// const { data } = require("autoprefixer");
 
 // Elements
 const root = document.documentElement;
